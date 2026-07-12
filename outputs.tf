@@ -1,3 +1,7 @@
+output "api_management_product_groups_id" {
+  description = "Map of id values across all api_management_product_groups, keyed the same as var.api_management_product_groups"
+  value       = { for k, v in azurerm_api_management_product_group.api_management_product_groups : k => v.id }
+}
 output "api_management_product_groups_api_management_name" {
   description = "Map of api_management_name values across all api_management_product_groups, keyed the same as var.api_management_product_groups"
   value       = { for k, v in azurerm_api_management_product_group.api_management_product_groups : k => v.api_management_name }
